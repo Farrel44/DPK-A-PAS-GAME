@@ -905,11 +905,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 78ae8ade-4c6c-4533-80f6-e35b6a022881
+  cloudProjectId: 92fff5aa-c143-46c9-92b9-cbb6f835f115
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: DPK A PAS
-  organizationId: farrel44
+  projectName: DPK A GAME PAS
+  organizationId: rasyaa21
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
