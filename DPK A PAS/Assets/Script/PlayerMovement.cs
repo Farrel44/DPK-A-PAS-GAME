@@ -4,32 +4,35 @@ using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
-[RequireComponent(typeof(TilemapCollider2D))]
+
 
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed;
     private Rigidbody2D body;
-    // Start is called before the first frame update
     private Animator anim;
     private bool Grounded = true;
+    private float jumpRotation; 
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         float HorizontalInput = Input.GetAxis("Horizontal");
+
+    if (Grounded)
+        {
+            jumpRotation = transform.rotation.eulerAngles.z;
+        }
+
         body.velocity = new Vector3(HorizontalInput * speed, body.velocity.y);
         
-        //flip player when move left and right
         if(HorizontalInput > 0.01f){
             transform.localScale = new Vector3(1.5f,1.5f,1);
         }
