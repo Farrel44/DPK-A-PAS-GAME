@@ -5061,6 +5061,7 @@ GameObject:
   - component: {fileID: 2060178142}
   - component: {fileID: 2060178144}
   - component: {fileID: 2060178143}
+  - component: {fileID: 2060178145}
   m_Layer: 0
   m_Name: idle0
   m_TagString: Player
@@ -5149,7 +5150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94b10823a8e24421cb435955da034c26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  body: {fileID: 0}
 --- !u!61 &2060178140
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5321,6 +5322,19 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &2060178145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060178136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 812e89de122dd457f8bc989ac1cca841, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  superJumpForce: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

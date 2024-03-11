@@ -7,19 +7,28 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
-
+[RequireComponent(typeof(SuperJump))]
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    private Rigidbody2D body;
+
+    
+    [SerializeField] public static float speed = 5f;
+    public Rigidbody2D body;
     private Animator anim;
-    private bool Grounded = true;
+    private SuperJump SuperJump;
+    public static bool Grounded = true;
     private float jumpRotation; 
+    
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        SuperJump = GetComponent<SuperJump>();
+
+        if (SuperJump == null){
+            Debug.Log("Super jump is null");
+        }
     }
 
     void Update()
@@ -41,6 +50,13 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(-1.5f,1.5f,1);
         }
 
+        if(Input.GetKey(KeyCode.X) && Grounded){
+            if (SuperJump != null) // Check for superJump before accessing
+            {
+                SuperJump.Jump();
+            }
+        }
+
         if(Input.GetKey(KeyCode.Space) && Grounded){
             Jump();
         }
@@ -48,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
         anim.SetBool("run", HorizontalInput != 0);
         anim.SetBool("Grounded", Grounded);
     }
-    private void Jump(){
+    protected virtual void Jump(){
         body.velocity = new Vector2(body.velocity.x, speed);
         Grounded = false;
     }
@@ -57,4 +73,12 @@ public class PlayerMovement : MonoBehaviour
             Grounded = true;
         }
     }
+    
+}
+public class superJump : PlayerMovement{
+    protected override void Jump(){
+        body.velocity = new Vector2(body.velocity.x, speed * 2);
+        Grounded = false;
+    }
+
 }
