@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
         anim.SetBool("Grounded", Grounded);
     }
     protected virtual void Jump(){
-        body.velocity = new Vector2(body.velocity.x, speed);
+        body.velocity = new Vector2(body.velocity.x, speed * 2);
         Grounded = false;
     }
     private void OnCollisionEnter2D(Collision2D collision) {
@@ -77,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
 }
 public class superJump : PlayerMovement{
     protected override void Jump(){
-        body.velocity = new Vector2(body.velocity.x, speed * 2);
+        body.velocity = new Vector2(body.velocity.x, speed * 3);
         Grounded = false;
     }
 
