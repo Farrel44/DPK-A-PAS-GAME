@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     
-    [SerializeField] public static float speed = 5f;
+    [SerializeField] public static float speed = 6f;
     public Rigidbody2D body;
     private Animator anim;
     private SuperJump SuperJump;
