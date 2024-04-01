@@ -43,15 +43,15 @@ public class PlayerMovement : MonoBehaviour
         body.velocity = new Vector3(HorizontalInput * speed, body.velocity.y);
         
         if(HorizontalInput > 0.01f){
-            transform.localScale = new Vector3(1.5f,1.5f,1);
+            transform.localScale = new Vector3(1.3f,1.3f,1);
         }
 
         if(HorizontalInput < -0.01f){
-            transform.localScale = new Vector3(-1.5f,1.5f,1);
+            transform.localScale = new Vector3(-1.3f,1.3f,1);
         }
 
         if(Input.GetKey(KeyCode.X) && Grounded){
-            if (SuperJump != null) // Check for superJump before accessing
+            if (SuperJump != null) 
             {
                 SuperJump.Jump();
             }

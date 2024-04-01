@@ -2390,7 +2390,7 @@ Transform:
   m_GameObject: {fileID: 746138584}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.07, z: -10}
+  m_LocalPosition: {x: -1.92, y: -0.06, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2470,7 +2470,7 @@ GameObject:
   - component: {fileID: 1114524118}
   m_Layer: 0
   m_Name: Platform
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2778,9 +2778,10 @@ GameObject:
   - component: {fileID: 1393815858}
   - component: {fileID: 1393815857}
   - component: {fileID: 1393815856}
+  - component: {fileID: 1393815859}
   m_Layer: 0
   m_Name: Ladder
-  m_TagString: Untagged
+  m_TagString: ladder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2794,7 +2795,7 @@ Transform:
   m_GameObject: {fileID: 1393815854}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.02, y: 0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2830,8 +2831,8 @@ TilemapCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 1
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
@@ -2902,7 +2903,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 2
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -2963,8 +2964,8 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileSpriteArray:
-  - m_RefCount: 1
-    m_Data: {fileID: -6018758859511590851, guid: e4484ec1fa8be6740bc036093a08481d, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 0
@@ -2973,8 +2974,8 @@ Tilemap:
     m_Data: {fileID: 1873682988662974406, guid: 818626c73732f1c4e8cfdc5d44cfb5f1, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -4741778797878615618, guid: 2ecf4f81eab614648a80a8bf2c3cd30b, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -6018758859511590851, guid: e4484ec1fa8be6740bc036093a08481d, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 5
     m_Data:
@@ -3021,6 +3022,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1393815859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393815854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cad1686d2fc88494b95bef29ba9af2ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1625465718
 GameObject:
   m_ObjectHideFlags: 0
@@ -5941,7 +5954,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.81, y: -1.13, z: 1}
-  m_LocalScale: {x: 1.4999999, y: 1.4999999, z: 1}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 0.8666667}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 800265855}
@@ -6017,7 +6030,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 1.4023095
+  m_Mass: 1.0532904
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 4
