@@ -43,11 +43,11 @@ public class PlayerMovement : MonoBehaviour
         body.velocity = new Vector3(HorizontalInput * speed, body.velocity.y);
         
         if(HorizontalInput > 0.01f){
-            transform.localScale = new Vector3(1.3f,1.3f,1);
+            transform.localScale = new Vector3(1.1f,1.1f,1);
         }
 
         if(HorizontalInput < -0.01f){
-            transform.localScale = new Vector3(-1.3f,1.3f,1);
+            transform.localScale = new Vector3(-1.1f,1.1f,1);
         }
 
         if(Input.GetKey(KeyCode.X) && Grounded){
