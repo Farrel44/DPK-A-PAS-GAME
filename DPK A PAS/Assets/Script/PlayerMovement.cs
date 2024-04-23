@@ -61,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
             Jump();
         }
 
-        anim.SetBool("run", HorizontalInput != 0);
+        anim.SetBool("run", Mathf.Abs(HorizontalInput) > 0.01f);
         anim.SetBool("Grounded", Grounded);
     }
     protected virtual void Jump(){
