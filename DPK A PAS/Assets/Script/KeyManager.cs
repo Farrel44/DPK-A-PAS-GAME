@@ -11,6 +11,8 @@ public class KeyManager : MonoBehaviour
     public bool isPickedUp;
     public Vector2 vel;
     public float smoothTime;
+    [SerializeField]public AudioClip keyPicked;
+    public AudioSource source;
     void Start()
     {
         
@@ -29,6 +31,7 @@ public class KeyManager : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other){
         if (other.gameObject.CompareTag("Player") && !isPickedUp){
             isPickedUp = true;
+            source.PlayOneShot(keyPicked);
             Debug.Log("True");
         }
     }

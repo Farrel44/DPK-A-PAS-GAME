@@ -7,16 +7,18 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
-[RequireComponent(typeof(SuperJump))]
+
 
 public class PlayerMovement : MonoBehaviour
 {
 
     
+    public AudioSource source;
+    public AudioClip clip;
+    [SerializeField] public AudioClip run, hitGorund, jumpGorund, idle;
     [SerializeField] public static float speed = 6f;
     public Rigidbody2D body;
     private Animator anim;
-    private SuperJump SuperJump;
     public static bool Grounded = true;
     private float jumpRotation; 
     
@@ -24,11 +26,6 @@ public class PlayerMovement : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        SuperJump = GetComponent<SuperJump>();
-
-        if (SuperJump == null){
-            Debug.Log("Super jump is null");
-        }
     }
 
     void Update()
@@ -41,7 +38,23 @@ public class PlayerMovement : MonoBehaviour
         }
 
         body.velocity = new Vector3(HorizontalInput * speed, body.velocity.y);
+
+        if (Mathf.Approximately(HorizontalInput, 0f) && Grounded && !source.isPlaying)
+        {
+            source.PlayOneShot(idle);
+        }
         
+        if (!Mathf.Approximately(HorizontalInput, 0f) && Grounded && !source.isPlaying)
+        {
+            source.PlayOneShot(run);
+            anim.SetBool("run", true);
+        }
+
+        else
+        {
+            anim.SetBool("run", false);
+        }
+
         if(HorizontalInput > 0.01f){
             transform.localScale = new Vector3(1.1f,1.1f,1);
         }
@@ -50,15 +63,10 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(-1.1f,1.1f,1);
         }
 
-        if(Input.GetKey(KeyCode.X) && Grounded){
-            if (SuperJump != null) 
-            {
-                SuperJump.Jump();
-            }
-        }
 
         if(Input.GetKey(KeyCode.Space) && Grounded){
             Jump();
+            source.PlayOneShot(clip);
         }
 
         anim.SetBool("run", Mathf.Abs(HorizontalInput) > 0.01f);
@@ -71,6 +79,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) {
         if(collision.gameObject.tag == "Ground"){
             Grounded = true;
+            source.PlayOneShot(hitGorund);
         }
     }
     
