@@ -1,30 +1,48 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 public class ladderMovement : MonoBehaviour
 {
     private float speed = 6f;
+    public AudioSource audioSource;
+    public AudioClip useLadder;
 
-    void Start() 
+    private bool isMoving = false; 
+
+    void Start()
     {
-        
+
     }
+
     void Update()
     {
-    
+
     }
 
-    private void OnTriggerStay2D(Collider2D other) {
-        if (other.tag == "Player" && Input.GetKey(KeyCode.W)){
-            other.GetComponent<Rigidbody2D>().velocity = new Vector2 (0,speed);
-        }
-        else if (other.tag == "Player" && Input.GetKey(KeyCode.S)){
-            other.GetComponent<Rigidbody2D>().velocity = new Vector2 (0,-speed);
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+
+            float verticalInput = Input.GetAxis("Vertical");
+            Rigidbody2D playerRigidbody = other.GetComponent<Rigidbody2D>();
+            playerRigidbody.velocity = new Vector2(0, verticalInput * speed);
+            isMoving = Mathf.Abs(verticalInput) > 0;
+            if (isMoving && !audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(useLadder);
+            }
+            else if ((!isMoving || Mathf.Abs(verticalInput) < 0.01f) && audioSource.isPlaying)
+            {
+                audioSource.Stop();
+            }
         }
     }
-    
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player") && audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
+    }
 }

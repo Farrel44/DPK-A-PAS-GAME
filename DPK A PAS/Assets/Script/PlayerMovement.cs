@@ -5,17 +5,24 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
+
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
+
+
 
 
 public class PlayerMovement : MonoBehaviour
 {
 
-    
+    [SerializeField] ParticleSystem dieParticle;
+    SpriteRenderer spriteRenderer;
+    Vector2 startPosititon;
+
+
     public AudioSource source;
     public AudioClip clip;
-    [SerializeField] public AudioClip run, hitGorund, jumpGorund, idle;
+    [SerializeField] public AudioClip run, hitGorund, jumpGorund, idle, DieSound, useLadder;
     [SerializeField] public static float speed = 6f;
     public Rigidbody2D body;
     private Animator anim;
@@ -26,10 +33,13 @@ public class PlayerMovement : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        startPosititon = transform.position;
     }
 
     void Update()
     {
+
         float HorizontalInput = Input.GetAxis("Horizontal");
 
     if (Grounded)
@@ -67,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetKey(KeyCode.Space) && Grounded){
             Jump();
             source.PlayOneShot(clip);
+
         }
 
         anim.SetBool("run", Mathf.Abs(HorizontalInput) > 0.01f);
@@ -81,6 +92,24 @@ public class PlayerMovement : MonoBehaviour
             Grounded = true;
             source.PlayOneShot(hitGorund);
         }
+    }
+
+    IEnumerator respawn(float duration){
+        body.simulated = false;
+        spriteRenderer.enabled = false;
+        transform.localScale = new Vector3(0,0,0);
+        yield return new WaitForSeconds(duration);
+        transform.position = startPosititon;
+        transform.localScale = new Vector3(1,1,1);
+        body.simulated = true;
+        spriteRenderer.enabled = true;
+
+    }
+
+    void die(){
+        source.PlayOneShot(DieSound);
+        StartCoroutine(respawn(0.5f));
+        dieParticle.Play(); 
     }
     
 }
