@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - ladder
   - Key
+  - Point
   layers:
   - Default
   - TransparentFX
