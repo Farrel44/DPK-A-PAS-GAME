@@ -18,8 +18,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] ParticleSystem dieParticle;
     SpriteRenderer spriteRenderer;
     Vector2 startPosititon;
-
-
     public AudioSource source;
     public AudioClip clip;
     [SerializeField] public AudioClip run, hitGorund, jumpGorund, idle, DieSound, useLadder;
@@ -92,6 +90,10 @@ public class PlayerMovement : MonoBehaviour
             Grounded = true;
             source.PlayOneShot(hitGorund);
         }
+        else if(collision.gameObject.tag == "laser"){
+            source.PlayOneShot(DieSound);
+            die();
+        }
     }
 
     IEnumerator respawn(float duration){
@@ -107,7 +109,6 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void die(){
-        source.PlayOneShot(DieSound);
         StartCoroutine(respawn(0.5f));
         dieParticle.Play(); 
     }
