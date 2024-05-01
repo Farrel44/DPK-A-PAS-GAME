@@ -8,6 +8,7 @@ TagManager:
   - ladder
   - Key
   - laser
+  - Enemy
   layers:
   - Default
   - TransparentFX
