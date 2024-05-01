@@ -14,8 +14,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
     [SerializeField] ParticleSystem dieParticle;
+    public KeyManager Key;
     SpriteRenderer spriteRenderer;
     Vector2 startPosititon;
     public AudioSource source;
@@ -109,6 +109,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void die(){
+        Key = FindAnyObjectByType<KeyManager>();
+        Key.isPickedUp = false;
         StartCoroutine(respawn(0.5f));
         dieParticle.Play(); 
     }
