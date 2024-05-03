@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Door : MonoBehaviour
 {
     public bool locked;
+    public NextLevel nextLevel;
 
     private Animator anim;
     // Start is called before the first frame update
@@ -30,15 +31,12 @@ public class Door : MonoBehaviour
         }
 
         if(!locked && distance < 0.5f){ 
-            StartCoroutine(LoadNextScene());
+            SceneManager.LoadScene("level 2");
         }
         
     }
 
-    IEnumerator LoadNextScene(){
-        yield return new WaitForSeconds(0.25f);
-        SceneManager.LoadScene("level 2");
-    }
+
 
     private void OnTriggerEnter2D(Collider2D other){
         if (other.gameObject.CompareTag("Key")){

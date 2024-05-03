@@ -109,10 +109,10 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void die(){
-        Key = FindAnyObjectByType<KeyManager>();
-        Key.isPickedUp = false;
         StartCoroutine(respawn(0.5f));
         dieParticle.Play(); 
+        Key = FindAnyObjectByType<KeyManager>();
+        Key.isPickedUp = false;
     }
     
 }
