@@ -7,9 +7,10 @@ using UnityEngine.SceneManagement;
 public class Door : MonoBehaviour
 {
     public bool locked;
-    public NextLevel nextLevel;
 
     private Animator anim;
+
+    Scene activeScene = SceneManager.GetActiveScene();
     // Start is called before the first frame update
     void Start()
     {
@@ -29,9 +30,19 @@ public class Door : MonoBehaviour
         else{
             anim.SetTrigger("Close");
         }
+        
+        Scene activeScene = SceneManager.GetActiveScene();
+        Debug.Log(activeScene.buildIndex);
 
         if(!locked && distance < 0.5f){ 
-            SceneManager.LoadScene("level 2");
+            //index : 
+            //level 1 (2)
+            //level 2 (3)
+            //level 3 (4)
+            //level 4 (5)
+            //level 5 (6)
+            SceneManager.LoadScene(activeScene.buildIndex + 1);
+            Debug.Log(activeScene.buildIndex + 1);
         }
         
     }
