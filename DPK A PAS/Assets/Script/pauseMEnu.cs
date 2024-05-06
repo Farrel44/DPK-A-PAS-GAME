@@ -33,5 +33,12 @@ public class pauseMEnu : MonoBehaviour
         Debug.Log("Restart");
     }
 
+    public void BackButton(){
+        pauseMenu.SetActive(false);
+    }
+    public void MenuPause(){
+        pauseMenu.SetActive(true);
+    }
+
 
 }
