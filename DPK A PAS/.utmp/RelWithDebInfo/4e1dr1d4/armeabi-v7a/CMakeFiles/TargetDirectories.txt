@@ -1,0 +1,5 @@
+/Users/rasya2121/Documents/PROJECT DPK A /DPK-A-PAS-GAME/DPK A PAS/.utmp/RelWithDebInfo/4e1dr1d4/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/rasya2121/Documents/PROJECT DPK A /DPK-A-PAS-GAME/DPK A PAS/.utmp/RelWithDebInfo/4e1dr1d4/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+/Users/rasya2121/Documents/PROJECT DPK A /DPK-A-PAS-GAME/DPK A PAS/.utmp/RelWithDebInfo/4e1dr1d4/armeabi-v7a/FramePacing/CMakeFiles/swappywrapper.dir
+/Users/rasya2121/Documents/PROJECT DPK A /DPK-A-PAS-GAME/DPK A PAS/.utmp/RelWithDebInfo/4e1dr1d4/armeabi-v7a/FramePacing/CMakeFiles/edit_cache.dir
+/Users/rasya2121/Documents/PROJECT DPK A /DPK-A-PAS-GAME/DPK A PAS/.utmp/RelWithDebInfo/4e1dr1d4/armeabi-v7a/FramePacing/CMakeFiles/rebuild_cache.dir
