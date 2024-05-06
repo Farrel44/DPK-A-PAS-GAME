@@ -108,7 +108,8 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    void die(){
+    public void die(){
+        source.PlayOneShot(DieSound);
         StartCoroutine(respawn(0.5f));
         dieParticle.Play(); 
         Key = FindAnyObjectByType<KeyManager>();
