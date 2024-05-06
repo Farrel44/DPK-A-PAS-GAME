@@ -2056,7 +2056,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2383060342763172108, guid: 3b1ec48f9df8f459492d3d61a02b89c0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -10
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2610926154744990366, guid: 3b1ec48f9df8f459492d3d61a02b89c0, type: 3}
       propertyPath: m_Sprite
@@ -2136,7 +2136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3718467167562033244, guid: 3b1ec48f9df8f459492d3d61a02b89c0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3872262852452756079, guid: 3b1ec48f9df8f459492d3d61a02b89c0, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
