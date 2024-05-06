@@ -21,7 +21,7 @@ public class pauseMEnu : MonoBehaviour
     }
 
     public void Home(){
-        SceneManager.LoadScene("Level Select");
+        SceneManager.LoadScene("start scene");
         Time.timeScale = 1;
         Debug.Log("Home");
     }
