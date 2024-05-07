@@ -376,11 +376,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7420715695806628090, guid: 7e2d20f2f3e5d42f09e8ee02b75c4b5e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.28
+      value: 6.3881607
       objectReference: {fileID: 0}
     - target: {fileID: 7420715695806628090, guid: 7e2d20f2f3e5d42f09e8ee02b75c4b5e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.14
+      value: -1.9236698
       objectReference: {fileID: 0}
     - target: {fileID: 8056539569552411188, guid: 7e2d20f2f3e5d42f09e8ee02b75c4b5e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11350,6 +11350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   locked: 1
+  ending: {fileID: 7377870797765531733, guid: 784857c0eb6894ef8ab2ea5bf30f8152, type: 3}
 --- !u!1 &908879764
 GameObject:
   m_ObjectHideFlags: 0
@@ -12783,7 +12784,7 @@ Transform:
   m_GameObject: {fileID: 1147473716}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -30.95, y: 3.11, z: 0}
+  m_LocalPosition: {x: -32.247974, y: 3.0018387, z: 0}
   m_LocalScale: {x: 2.25, y: 2.25, z: 2.25}
   m_ConstrainProportionsScale: 1
   m_Children: []

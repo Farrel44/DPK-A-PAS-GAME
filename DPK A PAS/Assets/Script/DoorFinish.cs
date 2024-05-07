@@ -38,7 +38,7 @@ public class DoorFinish : MonoBehaviour
             //level 4 (5)
             //level 5 (6)
             SceneManager.LoadScene("start scene");
-            
+            ending.SetActive(true);
         }
     }
 
