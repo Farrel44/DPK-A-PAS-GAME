@@ -8,6 +8,8 @@ public class DoorFinish : MonoBehaviour
     public bool locked;
     private Animator anim;
 
+    [SerializeField] GameObject ending;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +38,7 @@ public class DoorFinish : MonoBehaviour
             //level 4 (5)
             //level 5 (6)
             SceneManager.LoadScene("start scene");
+            
         }
     }
 
