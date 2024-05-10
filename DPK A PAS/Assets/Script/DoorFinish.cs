@@ -8,7 +8,7 @@ public class DoorFinish : MonoBehaviour
     public bool locked;
     private Animator anim;
 
-    [SerializeField] GameObject ending;
+    [SerializeField] public GameObject ending;
 
     // Start is called before the first frame update
     void Start()

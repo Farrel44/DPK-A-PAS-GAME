@@ -26,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     public static bool Grounded = true;
     private float jumpRotation; 
+    private bool canJump = true;
+    public float jumpCooldownTime = 0.05f;
     
     void Start()
     {
@@ -72,9 +74,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        if(Input.GetKey(KeyCode.Space) && Grounded){
+        if(Input.GetKey(KeyCode.Space) && Grounded && canJump){
             Jump();
             source.PlayOneShot(clip);
+            StartCoroutine(JumpCooldown());
 
         }
 
@@ -105,9 +108,14 @@ public class PlayerMovement : MonoBehaviour
         transform.localScale = new Vector3(1,1,1);
         body.simulated = true;
         spriteRenderer.enabled = true;
-
     }
 
+    private IEnumerator JumpCooldown()
+    {
+        canJump = false;
+        yield return new WaitForSeconds(jumpCooldownTime);
+        canJump = true;
+    }
     public void die(){
         source.PlayOneShot(DieSound);
         StartCoroutine(respawn(0.5f));

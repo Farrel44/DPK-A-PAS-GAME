@@ -154,7 +154,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -424, y: 222}
+  m_AnchoredPosition: {x: -457.1808, y: 266.62244}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &126228562
@@ -235,17 +235,29 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 126228562}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1349914524}
         m_TargetAssemblyTypeName: pauseMEnu, Assembly-CSharp
-        m_MethodName: backButton
+        m_MethodName: BackButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: pauseMEnu, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -618,7 +630,7 @@ RectTransform:
   m_GameObject: {fileID: 418796153}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.6500002, z: 3.3000004}
+  m_LocalScale: {x: 1.9, y: 2, z: 3.3000004}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1349914523}
@@ -833,7 +845,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4d2348586918d4cdf9bdb3756db5d7c6, type: 3}
   m_Resource: {fileID: 8300000, guid: 4d2348586918d4cdf9bdb3756db5d7c6, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1006,6 +1018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87e25a31974e8461cb209555805dcfc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meetTheTeam: {fileID: 0}
 --- !u!1 &613646023
 GameObject:
   m_ObjectHideFlags: 0
@@ -1300,6 +1313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87e25a31974e8461cb209555805dcfc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meetTheTeam: {fileID: 0}
 --- !u!1 &803197596
 GameObject:
   m_ObjectHideFlags: 0
@@ -1579,7 +1593,7 @@ GameObject:
   - component: {fileID: 1349914525}
   - component: {fileID: 1349914524}
   m_Layer: 5
-  m_Name: Pause Canvas
+  m_Name: Team
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1594,8 +1608,8 @@ RectTransform:
   m_GameObject: {fileID: 1349914522}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.86160475, y: 0.86160475, z: 0.86160475}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 418796154}
   - {fileID: 126228561}
@@ -1604,7 +1618,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 400.00003, y: 224.87883}
+  m_AnchoredPosition: {x: 408.238, y: 245.01613}
   m_SizeDelta: {x: 928.5, y: 522}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1349914524
@@ -1902,9 +1916,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1349914524}
-        m_TargetAssemblyTypeName: pauseMEnu, Assembly-CSharp
-        m_MethodName: PauseButton
+      - m_Target: {fileID: 2119790384}
+        m_TargetAssemblyTypeName: startMenu, Assembly-CSharp
+        m_MethodName: MettTheTeam
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2946,6 +2960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87e25a31974e8461cb209555805dcfc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meetTheTeam: {fileID: 1349914522}
 --- !u!1001 &6746413843658164955
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2954,9 +2969,35 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2119790383}
     m_Modifications:
+    - target: {fileID: 2304831464889349818, guid: 784857c0eb6894ef8ab2ea5bf30f8152, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310611020655004903, guid: 784857c0eb6894ef8ab2ea5bf30f8152, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310611020655004903, guid: 784857c0eb6894ef8ab2ea5bf30f8152, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621042836874591901, guid: 784857c0eb6894ef8ab2ea5bf30f8152, type: 3}
+      propertyPath: m_text
+      value: 'Thanks
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7170726611908940006, guid: 784857c0eb6894ef8ab2ea5bf30f8152, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7377870797765531733, guid: 784857c0eb6894ef8ab2ea5bf30f8152, type: 3}
       propertyPath: m_Name
       value: thanks for playing
+      objectReference: {fileID: 0}
+    - target: {fileID: 7377870797765531733, guid: 784857c0eb6894ef8ab2ea5bf30f8152, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9145344894666314926, guid: 784857c0eb6894ef8ab2ea5bf30f8152, type: 3}
       propertyPath: m_Pivot.x
@@ -3020,11 +3061,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9145344894666314926, guid: 784857c0eb6894ef8ab2ea5bf30f8152, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 400.00003
+      value: 408.238
       objectReference: {fileID: 0}
     - target: {fileID: 9145344894666314926, guid: 784857c0eb6894ef8ab2ea5bf30f8152, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 224.87883
+      value: 250.50813
       objectReference: {fileID: 0}
     - target: {fileID: 9145344894666314926, guid: 784857c0eb6894ef8ab2ea5bf30f8152, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
