@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] ParticleSystem dieParticle;
     public KeyManager Key;
     SpriteRenderer spriteRenderer;
-    Vector2 startPosititon;
+    Vector2 checkpointPost;
     public AudioSource source;
     public AudioClip clip;
     [SerializeField] public AudioClip run, hitGorund, jumpGorund, idle, DieSound, useLadder;
@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        startPosititon = transform.position;
+        checkpointPost = transform.position;
     }
 
     void Update()
@@ -99,12 +99,16 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void UpdateCheckPoint(Vector2 pos){
+        checkpointPost = pos;
+    }
+
     IEnumerator respawn(float duration){
         body.simulated = false;
         spriteRenderer.enabled = false;
         transform.localScale = new Vector3(0,0,0);
         yield return new WaitForSeconds(duration);
-        transform.position = startPosititon;
+        transform.position = checkpointPost;
         transform.localScale = new Vector3(1,1,1);
         body.simulated = true;
         spriteRenderer.enabled = true;
