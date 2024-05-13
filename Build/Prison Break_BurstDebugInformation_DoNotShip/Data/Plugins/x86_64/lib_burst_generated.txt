@@ -1,4 +1,4 @@
-Library: D:\Coding\Game DPK A\DPK-A-PAS-GAME\DPK A PAS\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+Library: C:\Users\corne\Downloads\DPKA\Unity\DPK-A-PAS-GAME\DPK A PAS\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --platform=Windows
 --backend=burst-llvm-16
 --target=X64_SSE2
@@ -71,10 +71,10 @@ Library: D:\Coding\Game DPK A\DPK-A-PAS-GAME\DPK A PAS\Temp\BurstOutput\Data\Plu
 --assembly-defines=UnityEngine;
 --linker-options=PdbAltPath="Prison Break_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=D:\Coding\Game DPK A\DPK-A-PAS-GAME\DPK A PAS\Temp\Burst
---key-folder=D:/Unity/Editor/2023.2.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=D:\Coding\Game DPK A\DPK-A-PAS-GAME\DPK A PAS\Library\Burst
---output=D:\Coding\Game DPK A\DPK-A-PAS-GAME\DPK A PAS\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--temp-folder=C:\Users\corne\Downloads\DPKA\Unity\DPK-A-PAS-GAME\DPK A PAS\Temp\Burst
+--key-folder=C:/Program Files/Unity/Hub/Editor/2023.2.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
+--decode-folder=C:\Users\corne\Downloads\DPKA\Unity\DPK-A-PAS-GAME\DPK A PAS\Library\Burst
+--output=C:\Users\corne\Downloads\DPKA\Unity\DPK-A-PAS-GAME\DPK A PAS\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Burst.BurstCompiler+BurstCompilerHelper, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsBurstEnabled()--8c2be93e18276203cbd918daa2748a10
@@ -186,10 +186,10 @@ Library: D:\Coding\Game DPK A\DPK-A-PAS-GAME\DPK A PAS\Temp\BurstOutput\Data\Plu
 --assembly-defines=UnityEngine;
 --linker-options=PdbAltPath="Prison Break_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=D:\Coding\Game DPK A\DPK-A-PAS-GAME\DPK A PAS\Temp\Burst
---key-folder=D:/Unity/Editor/2023.2.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=D:\Coding\Game DPK A\DPK-A-PAS-GAME\DPK A PAS\Library\Burst
---output=D:\Coding\Game DPK A\DPK-A-PAS-GAME\DPK A PAS\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--temp-folder=C:\Users\corne\Downloads\DPKA\Unity\DPK-A-PAS-GAME\DPK A PAS\Temp\Burst
+--key-folder=C:/Program Files/Unity/Hub/Editor/2023.2.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
+--decode-folder=C:\Users\corne\Downloads\DPKA\Unity\DPK-A-PAS-GAME\DPK A PAS\Library\Burst
+--output=C:\Users\corne\Downloads\DPKA\Unity\DPK-A-PAS-GAME\DPK A PAS\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Burst.BurstCompiler+BurstCompilerHelper, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsBurstEnabled()--8c2be93e18276203cbd918daa2748a10
